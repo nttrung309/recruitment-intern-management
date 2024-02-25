@@ -18,7 +18,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@routers/*": ["src/routers/*"],
+      "@views/*": ["src/views/*"]
+      // other aliases if needed
+    }
   },
   "include": [
     "src"
