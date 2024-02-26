@@ -1,0 +1,78 @@
+.login-form-container{
+    width: 22%;
+
+    display: flex;
+    align-items: center;
+
+    .login-form{
+        width: 100%;
+        &__header{
+            color: $-Orange-500;
+            margin-bottom: 30px;
+    
+            @include login-form-header;
+        }
+        &__form{
+            .input-field{
+                margin-top: 24px;
+                .label{
+                    color: #4D4D4D;
+                    @include login-form-label;
+                    margin-bottom: 8px;
+                }
+                .dropdown-icon{
+                    color: #F26D21;;
+                }
+            }
+            .remember-forgot-password{
+                display: flex;
+                justify-content: space-between;
+    
+                .remember-password{
+                    display: flex;
+                    align-items: center;
+    
+                    .remember-pass-checkbox{
+                        width: 20px;
+                        height: 20px;
+                        border: 1px solid #F26D21;
+                        accent-color: #F26D21;
+                        border-radius: 4px;
+                        -webkit-border-radius: 4px;
+                        -moz-border-radius: 4px;
+                        -ms-border-radius: 4px;
+                        -o-border-radius: 4px;
+                    }
+                    .remember-password-label{
+                        @include remember-password-label;
+                    }
+                }
+                .forgot-password-label{
+                    display: flex;
+                    align-items: center;
+                    color: $-Orange-500;
+                    @include forgot-password-label;
+                }
+            }
+            .button.login{
+                @include button-login-style;
+                color: #FFFFFF;
+
+                width: 100%;
+                height: 48px;
+
+                border-radius: 8px;
+                -webkit-border-radius: 8px;
+                -moz-border-radius: 8px;
+                -ms-border-radius: 8px;
+                -o-border-radius: 8px;
+
+                border: none;
+
+                background-color: $-Orange-500;
+
+                margin-top: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.auth-layout{
+    height: 100vh;
+    &__header{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        height: 20%;
+        
+        color: $-Orange-500;
+        @include auth-layout-header;
+
+        .img-container{
+            display: flex;
+            align-items: center;
+        }
+        p{
+            align-self: center;
+        }
+    }
+    &__content{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+
+        height: 70%;
+
+        .test-form{
+            width: 30%;
+            height: 600px;
+        }
+
+        .banner-container{
+            display: flex;
+            align-items: center;
+        }
+        
+    }
+}
