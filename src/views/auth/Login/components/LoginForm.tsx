@@ -1,14 +1,19 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import { Select, Space, Input } from 'antd';
-import { CaretDownOutlined } from '@ant-design/icons';
+import { CaretDownOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import customDropdownIcon from '../../../../shared/assets/images/showdropdown_icon.svg';
+import { Link } from 'react-router-dom';
 
 interface AuthLayoutProps {
     children: ReactNode;
 }
 
 const LoginForm = () => {
+    const [isValidInput, setIsValidInput] = useState<boolean>(true);
+
     const reCAPCHA = require('../../../../shared/assets/images/reCAPCHA.png');
+
+
     return (
         <div className="login-form-container">
             <div className='login-form'>
@@ -19,8 +24,8 @@ const LoginForm = () => {
                         <Select
                             defaultValue="Chọn vai trò"
                             style={{ width: "100%" }}
-                            onChange={() => {}}
                             options={[
+                                { value: 'Tất Cả', label: 'Tất cả' },
                                 { value: 'Hồ Chí Minh', label: 'Hồ Chí Minh' },
                                 { value: 'Hà Nội', label: 'Hà Nội' },
                                 { value: 'Đà Nẵng', label: 'Đà Nẵng' },
@@ -30,18 +35,27 @@ const LoginForm = () => {
                     </div>
                     <div className='input-field'>
                         <p className="label">Email <span style={{color: "#FF4747"}}>*</span></p>
-                        <Input onChange={() => {}} placeholder="Tên đăng nhập"/>
+                        <Input placeholder="Tên đăng nhập"/>
                     </div>
                     <div className='input-field'>
                         <p className="label">Mật khẩu <span style={{color: "#FF4747"}}>*</span></p>
                         <Input.Password placeholder="Nhập mật khẩu" />
                     </div>
+                    {!isValidInput && (
+                        <div className='infor-label'>
+                            <InfoCircleOutlined />
+                            <div>Sai tên đăng nhập hoặc mật khẩu</div>
+                        </div>
+                    )}
+                    
                     <div className='remember-forgot-password'>
                         <div className="remember-password">
                             <input type="checkbox" id="remember-pass-checkbox" className="remember-pass-checkbox"/>
                             <p className='remember-password-label'>Ghi nhớ mật khẩu</p>
                         </div>
-                        <div className='forgot-password-label'>Quên mật khẩu?</div>
+                        <Link className='back-login-btn' to="/forgot-password">
+                            <div className='back-login-label'>Quên mật khẩu?</div>
+                        </Link>
                     </div>
                     <div className='recapcha-container'>
                         <img src={reCAPCHA} alt="reCAPCHA" />

@@ -17,12 +17,28 @@
                 margin-top: 24px;
                 .label{
                     color: #4D4D4D;
-                    @include login-form-label;
+                    @include auth-form-label;
                     margin-bottom: 8px;
                 }
                 .dropdown-icon{
                     color: #F26D21;;
                 }
+                .ant-input{
+                    font-family: Roboto;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+            .infor-label{
+                font-family: "Open Sans";
+                font-size: 16px;
+                font-weight: 400;
+                color: red;
+
+                display: flex;
+                column-gap: 4px;
+                
+                margin-top: 8px;
             }
             .remember-forgot-password{
                 display: flex;
@@ -47,12 +63,22 @@
                         @include remember-password-label;
                     }
                 }
-                .forgot-password-label{
+                .back-login-btn{
+                    &:visited{
+                        color: $-Orange-500;
+                    }
                     display: flex;
                     align-items: center;
-                    color: $-Orange-500;
-                    @include forgot-password-label;
+
+                    .forgot-password-label{
+                        
+                        color: $-Orange-500;
+                        @include forgot-password-label;
+
+                        cursor: pointer;
+                    }
                 }
+                
             }
             .button.login{
                 @include button-login-style;
