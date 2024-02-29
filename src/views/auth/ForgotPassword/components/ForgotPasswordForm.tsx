@@ -19,7 +19,7 @@ const ForgotPasswordForm = () => {
                 <div className='forgot-password-form__intro'>Vui lòng nhập địa chỉ email đã đăng kí để yêu cầu khôi phục lại mật khẩu</div>
                 <form className='forgot-password-form__form' onSubmit={() => {}}>
                     <div className='input-field'>
-                        <p className="label">Email <span style={{color: "#FF4747"}}>*</span></p>
+                        <p className="label">Email</p>
                         <Input placeholder="Tên đăng nhập"/>
                     </div>
                     {!isValidInput && (
@@ -32,7 +32,7 @@ const ForgotPasswordForm = () => {
                         <div className='back-login-label'>Quay lại đăng nhập</div>
                     </Link>
                     
-                    <input className='forgot-password-submit button' type="button" value="Đăng nhập" />
+                    <input className='forgot-password-submit button' type="button" value="Xác nhận" />
                 </form>
             </div>
         </div>
