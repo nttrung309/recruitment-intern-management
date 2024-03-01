@@ -4,33 +4,39 @@
         margin: 0 auto;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-
         height: 20%;
         
         color: $-Orange-500;
         @include auth-layout-header;
 
+        justify-content: center;
+        column-gap: 40px;
+
         .img-container{
             display: flex;
             align-items: center;
+            width: 28%;
+            min-width: fit-content;
         }
         p{
+            width: 28%;
             align-self: center;
+            min-width: 500px;
         }
     }
     &__content{
         margin: 0 auto;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        flex-wrap: nowrap;
-
         height: 70%;
+        justify-content: center;
+        column-gap: 40px;
 
-        .test-form{
-            width: 30%;
-            height: 600px;
+        &__form{
+            width: 28%;
+            min-width: 360px;
+            display: flex;
+            align-items: center;
         }
 
         .banner-container{

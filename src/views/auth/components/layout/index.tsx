@@ -13,12 +13,14 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
                 <div className='img-container'>
                     <img src={authImg} alt="My SVG" />
                 </div>
-                <p>HỆ THỐNG TUYỂN DỤNG <br/>
+                <p>HỆ THỐNG TUYỂN DỤNG 
                     VÀ QUẢN LÝ SINH VIÊN THỰC TẬP
                 </p>
             </div>
             <div className='auth-layout__content'>
-                {children}
+                <div className="auth-layout__content__form">
+                    {children}
+                </div>
                 <div className='banner-container'>
                     <img src={bannerImg} alt="auth-banner.png" />
                 </div>

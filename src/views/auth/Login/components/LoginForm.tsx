@@ -3,6 +3,7 @@ import { Select, Space, Input } from 'antd';
 import { CaretDownOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import customDropdownIcon from '../../../../shared/assets/images/showdropdown_icon.svg';
 import { Link } from 'react-router-dom';
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface AuthLayoutProps {
     children: ReactNode;
@@ -31,10 +32,17 @@ const LoginForm = () => {
                                 { value: 'Đà Nẵng', label: 'Đà Nẵng' },
                             ]}
                             suffixIcon={<CaretDownOutlined height={6} width={12} className='dropdown-icon'/>}
+                            dropdownRender={(menu) => (
+                                <>
+                                  <div style={{backgroundColor: "yellow"}}>
+                                    {menu}
+                                  </div>
+                                </>
+                            )}
                         />
                     </div>
                     <div className='input-field'>
-                        <p className="label">Email <span style={{color: "#FF4747"}}>*</span></p>
+                        <p className="label">Email <span style={{color: "#FF4747"}}>*</span></p> 
                         <Input placeholder="Tên đăng nhập"/>
                     </div>
                     <div className='input-field'>
@@ -57,9 +65,9 @@ const LoginForm = () => {
                             <div className='back-login-label'>Quên mật khẩu?</div>
                         </Link>
                     </div>
-                    <div className='recapcha-container'>
-                        <img src={reCAPCHA} alt="reCAPCHA" />
-                    </div>
+                    <ReCAPTCHA
+                        sitekey="6LetL4UpAAAAAGDyUAD6ATbjbVqK4BkmcTL4t9B5"
+                    />
                     <input className='login button' type="button" value="Đăng nhập" />
                 </form>
             </div>
