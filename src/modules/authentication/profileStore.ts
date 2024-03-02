@@ -1,5 +1,7 @@
-import { createReducer, Selector } from '@reduxjs/toolkit';
+import { createReducer, PayloadAction, Selector } from '@reduxjs/toolkit';
 import { RootState } from '..';
+import { setStatusLogin, setLinkImage } from './actions';
+
 interface IStore {
     statusLogin: boolean;
     listPermissionCode?: Array<string>;
@@ -15,7 +17,14 @@ const initialState: IStore = {
 };
 
 const profileStore = createReducer(initialState, (builder) => {
-    // Xử lý các action ở đây nếu cần
+    builder
+        .addCase(setStatusLogin, (state, action: PayloadAction<boolean>) => {
+            state.statusLogin = action.payload;
+            alert(state.statusLogin);
+        })
+        .addCase(setLinkImage, (state, action: PayloadAction<string>) => {
+            state.linkImage = action.payload;
+        });
 });
 
 export const StatusLoginSelector: Selector<RootState, boolean> = state => {

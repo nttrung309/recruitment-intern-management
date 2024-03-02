@@ -1,9 +1,14 @@
 import React, { ReactNode, useState } from 'react';
 import { Select, Space, Input } from 'antd';
 import { CaretDownOutlined, InfoCircleOutlined } from '@ant-design/icons';
-import customDropdownIcon from '../../../../shared/assets/images/showdropdown_icon.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 import ReCAPTCHA from "react-google-recaptcha";
+
+import customDropdownIcon from '../../../../shared/assets/images/showdropdown_icon.svg';
+import { StatusLoginSelector } from '../../../../modules/authentication/profileStore';
+import { useSelector, useDispatch } from 'react-redux';
+import { setStatusLogin, setLinkImage } from '../../../../modules/authentication/actions';
 
 interface AuthLayoutProps {
     children: ReactNode;
@@ -14,12 +19,21 @@ const LoginForm = () => {
 
     const reCAPCHA = require('../../../../shared/assets/images/reCAPCHA.png');
 
+    let navigate = useNavigate();
+    const dispatch = useDispatch();
 
+    const statusLogin: boolean = useSelector(StatusLoginSelector);
+
+    const HandleSubmit = () => {
+        dispatch(setStatusLogin(true));
+        navigate('/');
+    };
+    
     return (
         <div className="login-form-container">
             <div className='login-form'>
                 <div className='login-form__header'>Đăng nhập</div>
-                <form className='login-form__form' onSubmit={() => {}}>
+                <form className='login-form__form' onSubmit={() => {HandleSubmit();}}>
                     <div className='input-field'>
                         <p className="label">Vai trò <span style={{color: "#FF4747"}}>*</span></p>
                         <Select
@@ -68,7 +82,7 @@ const LoginForm = () => {
                     <ReCAPTCHA
                         sitekey="6LetL4UpAAAAAGDyUAD6ATbjbVqK4BkmcTL4t9B5"
                     />
-                    <input className='login button' type="button" value="Đăng nhập" />
+                    <input className='login button' type="submit" value="Đăng nhập" />
                 </form>
             </div>
         </div>

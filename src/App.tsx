@@ -19,7 +19,6 @@ function App() {
     <Router>
       <MainView statusLogin={statusLogin} />
     </Router>
-    
   );
 }
 
