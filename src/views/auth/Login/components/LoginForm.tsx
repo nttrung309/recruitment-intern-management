@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import { Select, Space, Input } from 'antd';
 import { CaretDownOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import { Link, useNavigate } from 'react-router-dom';
@@ -24,7 +24,8 @@ const LoginForm = () => {
 
     const statusLogin: boolean = useSelector(StatusLoginSelector);
 
-    const HandleSubmit = () => {
+    const HandleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
         dispatch(setStatusLogin(true));
         navigate('/');
     };
@@ -33,7 +34,7 @@ const LoginForm = () => {
         <div className="login-form-container">
             <div className='login-form'>
                 <div className='login-form__header'>Đăng nhập</div>
-                <form className='login-form__form' onSubmit={() => {HandleSubmit();}}>
+                <form className='login-form__form' onSubmit={(event) => {HandleSubmit(event);}}>
                     <div className='input-field'>
                         <p className="label">Vai trò <span style={{color: "#FF4747"}}>*</span></p>
                         <Select

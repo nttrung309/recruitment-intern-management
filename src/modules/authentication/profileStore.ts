@@ -20,7 +20,6 @@ const profileStore = createReducer(initialState, (builder) => {
     builder
         .addCase(setStatusLogin, (state, action: PayloadAction<boolean>) => {
             state.statusLogin = action.payload;
-            alert(state.statusLogin);
         })
         .addCase(setLinkImage, (state, action: PayloadAction<string>) => {
             state.linkImage = action.payload;
