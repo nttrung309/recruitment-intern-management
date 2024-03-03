@@ -1,0 +1,80 @@
+.home{
+    height: 85%;
+    padding-top: 40px;
+    box-sizing: border-box;
+    
+    &__title{
+        font-family: Roboto;
+        font-size: 32px;
+        font-weight: 700;
+        text-align: center;
+
+        color: $-Gray-500;
+
+        &__username{
+            color: $-Orange-500;
+        }
+    }
+
+    &__select-test{
+        width: 100%;
+        margin-top: 20px;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        column-gap: 20px;
+
+        &__select{
+            height: 48px;
+            width: 600px;
+
+            &__option{
+                font-family: 'Open Sans';
+                font-size: 16px;
+            }
+
+            .ant-select-selection-item{
+                font-family: 'Open Sans';
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+        .btn-home-create-test{
+            width: 145px;
+            height: 48px;
+            
+            color: white;
+
+            background-color: $-Orange-500;
+            border: none;
+
+            border-radius: 6px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -o-border-radius: 6px;
+
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 700;
+
+            cursor: pointer;
+            transition: all ease 0.5s;
+            -webkit-transition: all ease 0.5s;
+            -moz-transition: all ease 0.5s;
+            -ms-transition: all ease 0.5s;
+            -o-transition: all ease 0.5s;
+
+            &:hover{
+                background-color: $-Orange-400;
+                scale: 1.01;
+            }
+        }
+    }
+}
+
+.ant-select-dropdown, .ant-select-item-option-selected:not(.ant-select-item-option-disabled){
+    color: $-Orange-500 !important;
+}

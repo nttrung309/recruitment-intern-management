@@ -36,8 +36,8 @@ const Header: React.FC<HeaderProps> = ({headerItems, selectedItem, showUserMenu}
               <span>{item.label}</span>
             </div>
           ))}
+          {showUserMenu ? <UserMenu/> : null}
         </div>
-        {showUserMenu ? <UserMenu/> : null}
       </div>
     );
 };

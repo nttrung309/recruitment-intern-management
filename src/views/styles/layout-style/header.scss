@@ -1,6 +1,6 @@
 .header{
     width: 100%;
-    height: 100px;
+    height: 10%;
     
     display: flex;
     flex-direction: row;
@@ -34,5 +34,44 @@
                 }
             }
         }
+    }
+}
+
+.header-user-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+    width: 170px;
+    height: 54px;
+    background-color: $-Orange-500;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    
+    &__user-avatar{
+
+    }
+
+    &__user-name{
+        font-family: Roboto;
+        font-size: 20px;
+        font-weight: 600;
+
+        color: #FFFFFF;
+    }
+
+    &:hover{
+        background-color: $-Orange-400;
+        scale: 1.01;
     }
 }

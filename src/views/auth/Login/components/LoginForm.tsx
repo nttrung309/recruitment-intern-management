@@ -47,13 +47,6 @@ const LoginForm = () => {
                                 { value: 'Đà Nẵng', label: 'Đà Nẵng' },
                             ]}
                             suffixIcon={<CaretDownOutlined height={6} width={12} className='dropdown-icon'/>}
-                            dropdownRender={(menu) => (
-                                <>
-                                  <div style={{backgroundColor: "yellow"}}>
-                                    {menu}
-                                  </div>
-                                </>
-                            )}
                         />
                     </div>
                     <div className='input-field'>
