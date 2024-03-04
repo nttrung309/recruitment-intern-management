@@ -6,10 +6,12 @@ import { UsernameSelector } from 'src/modules/authentication/profileStore';
 
 import { Select, Avatar } from 'antd';
 import { CaretDownOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 
 const { Option } = Select;
 
 const HomeBody = () => {
+    const navigate = useNavigate();
     const userName: string = useSelector(UsernameSelector);
     const testNames = [
         { value: 'backend-test', label: 'Đề thi môn Lập trình Back-end (Ngôn ngữ CSharp .Net, làm API)' },
@@ -38,7 +40,7 @@ const HomeBody = () => {
                         </Option>
                     ))}
                 </Select>
-                <input className='btn-home-create-test' type="button" value="+ Tạo đề thi" />
+                <input className='btn-home-create-test' type="button" value="+ Tạo đề thi" onClick={() => {navigate('/test')}}/>
             </div>
         </div>
     );

@@ -9,7 +9,7 @@ interface HeaderItem {
 
 interface MainLayoutProps {
     children: ReactNode;
-    headerItems: HeaderItem[];
+    headerItems?: HeaderItem[];
     selectedItem: number
     showUserMenu: boolean
 }

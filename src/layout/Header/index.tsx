@@ -16,7 +16,7 @@ interface HeaderItem {
 }
 
 interface HeaderProps {
-  headerItems: HeaderItem[];
+  headerItems?: HeaderItem[];
   selectedItem: number;
   showUserMenu: boolean
 }
@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({headerItems, selectedItem, showUserMenu}
             <img src={headerImg} alt="" />
         </div>
         <div className='header__items'>
-          {headerItems.map((item, index) => (
+          {headerItems?.map((item, index) => (
             <div key={index} className={`header-item ${selectedItem === (index + 1) ? "selected" : ""}`}>
               <ReactSVG className='header-item__icon' src={item.icon}/>
               <span>{item.label}</span>

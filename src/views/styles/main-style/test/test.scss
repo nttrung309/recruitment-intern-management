@@ -1,0 +1,16 @@
+.test-page{
+    height: 85%;
+    width: 80%;
+    padding-top: 40px;
+    box-sizing: border-box;
+
+    margin: 0 auto;
+
+    &__title{
+        width: fit-content;
+    }
+
+    &__subtitle{
+        width: fit-content;
+    }
+}
