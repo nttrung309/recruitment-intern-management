@@ -1,4 +1,5 @@
 @use 'text_styles' as *;
 
-@import "./auth-style/style_index.scss";
+@import "./auth/style_index.scss";
+@import "./test/style_index.scss";
 @import "./button.scss";
