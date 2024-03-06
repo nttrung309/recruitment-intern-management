@@ -1,21 +1,112 @@
 .test-form {
+  padding-top: 40px;
+
     &__question-num {
-      // CSS styles for question number
+      font-family: 'Roboto';
+      font-size: 20px;
+      font-weight: 600;
+      color: $-Gray-500;
+
+      margin-bottom: 6px;
     }
   
     &__question-content {
-      // CSS styles for question content
+      font-family: 'Roboto';
+      font-size: 18px;
+      font-weight: 400;
     }
   
     &__question-require {
-      // CSS styles for question requirement
+      font-family: 'Roboto';
+      font-size: 18px;
+      font-weight: 400;
     }
   
     &__answers {
-      // CSS styles for answers section
+      height: fit-content;
+      max-height: 300px;
+      padding-top: 16px;
+
+      .test-form-single-answer{
+        height: 50px;
+      }
   
-      .test-form__answer {
-        // CSS styles for individual answer container
+      .test-form-single-answer .ant-radio-wrapper {
+        font-family: 'Roboto';
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      .test-form-single-answer .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+        border-color: $-Orange-500;
+        background-color: $-Orange-500
+      }
+
+      .ant-radio-wrapper:hover .ant-radio-inner{
+        border-color: $-Orange-500;
+      }
+
+      .ant-checkbox-group{
+        flex-direction: column;
+      }
+
+      .ant-checkbox-inner{
+        height: 20px;
+        width: 20px;
+
+        &:hover{
+          border-color: $-Orange-500;
+        }
+      }
+
+      .ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover .ant-checkbox-inner{
+        border-color: $-Orange-500;
+      }
+
+      .ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover .ant-checkbox-checked:not(.ant-checkbox-disabled) .ant-checkbox-inner {
+        background-color: $-Orange-400;
+        border-color: transparent;
+      }
+
+      .ant-checkbox-wrapper{
+        font-family: 'Roboto';
+        font-size: 16px;
+        font-weight: 400;
+
+        color: $-Gray-500;
+
+        height: 50px;
+        align-items: center;
+      }
+
+      .ant-checkbox-checked .ant-checkbox-inner{
+        background-color: $-Orange-500;
+        border-color: $-Orange-500;
+
+
+      }
+
+      .test-form-essay-answer{
+        width: 600px;
+        height: 180px;
+      }
+      
+    }
+
+    &__question-navigate{
+      display: flex;
+      column-gap: 24px;
+      align-items: center;
+      justify-content: end;
+
+      font-size: 24px;
+      color: $-Orange-500;
+
+      .btn-prev-question{
+        cursor: pointer;
+      }
+      .btn-next-question{
+        cursor: pointer;
       }
     }
   }

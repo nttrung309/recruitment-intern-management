@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 import type { RadioChangeEvent } from 'antd';
-import { Radio } from 'antd';
+import { Radio, Checkbox, Input } from 'antd';
+import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
+import type { GetProp } from 'antd';
+
+const { TextArea } = Input;
+
+const plainOptions = ['Apple', 'Pear', 'Orange'];
 
 const TestForm: React.FC = () => {
     //Redux
@@ -9,9 +15,9 @@ const TestForm: React.FC = () => {
 
     //Call data from Firebase
     enum QuestionType {
-        SingleAnswer, // Một đáp án
-        MultipleAnswer, // Nhiều đáp án
-        Essay // Tự luận
+        SingleAnswer,
+        MultipleAnswer,
+        Essay
     };
 
     const testData = [
@@ -42,11 +48,10 @@ const TestForm: React.FC = () => {
     ];
 
     const  [doingQuesId, setDoingQuesId] = useState<number>(1);
-    const [userAnswer, setUserAnswer] = useState<string[]>([]);
+    const [userAnswer, setUserAnswer] = useState<any[]>([]);
+    const [currentQuestion, SetCurrentQuestion] = useState<any>();
 
-    const currentQuestion = testData?.find(question => question.questionID === doingQuesId);
-
-    const HandleUserAnswer = () => (e: RadioChangeEvent) => {
+    const HandleSingleAnswer = () => (e: RadioChangeEvent) => {
         if (currentQuestion) {
             const newUserAnswer = [...userAnswer];
 
@@ -55,9 +60,42 @@ const TestForm: React.FC = () => {
         }
     };
 
+    const HandleMultipleAnswer: GetProp<typeof Checkbox.Group, 'onChange'> = (checkedValues) => {
+        console.log('checked = ', checkedValues);
+        if (currentQuestion) {
+            const newUserAnswer = [...userAnswer];
+
+            newUserAnswer[currentQuestion.questionID - 1] = checkedValues;
+            setUserAnswer(newUserAnswer);
+        }
+    };
+
+    const HandleEssayAnswer = (textAnswer: any) => {
+        if (currentQuestion) {
+            const newUserAnswer = [...userAnswer];
+
+            newUserAnswer[currentQuestion.questionID - 1] = textAnswer;
+            setUserAnswer(newUserAnswer);
+        }
+    } 
+
+    useEffect(() => {
+        const newQuestion = testData?.find(question => question.questionID === doingQuesId);
+        SetCurrentQuestion(newQuestion);
+    }, [doingQuesId])
+
+    const HandleNavigateQuestion = (action: 'next' | 'back') => {
+        if(action == 'next' && doingQuesId < testData.length){
+            setDoingQuesId(doingQuesId + 1);
+        }
+        else if (doingQuesId != 0){
+            setDoingQuesId(doingQuesId - 1);
+        }
+    }
+
     useEffect(() => {
         console.log(userAnswer);
-    })
+    }, [userAnswer]);
 
     return (
         <div className="test-form">
@@ -71,22 +109,38 @@ const TestForm: React.FC = () => {
                 {currentQuestion?.questionRequire}
             </div>
             <div className="test-form__answers">
-                <Radio.Group onChange={HandleUserAnswer()} >
-                    {currentQuestion?.answers.map((answer, index) => {
-                        switch(currentQuestion?.questionType){
-                            case QuestionType.SingleAnswer:
-                                return(
-                                    <div className={"test-form__answer" + index}>
-                                        <Radio value={index}> 
-                                            {String.fromCharCode(65 + index)}. {answer}
-                                        </Radio>
-                                    </div>
-                                );
-                            default:
-                                return null;
-                        }
-                    })}
-                </Radio.Group>
+                {currentQuestion?.questionType === QuestionType.SingleAnswer && (
+                    <Radio.Group onChange={HandleSingleAnswer()}>
+                        {currentQuestion?.answers.map((answer: string, index: number) => (
+                            <div className='test-form-single-answer' key={index}>
+                                <Radio value={index}> 
+                                    {String.fromCharCode(65 + index)}. {answer}
+                                </Radio>
+                            </div>
+                        ))}
+                    </Radio.Group>
+                    
+                )}
+                {currentQuestion?.questionType === QuestionType.MultipleAnswer && (
+                    <Checkbox.Group onChange={HandleMultipleAnswer}>
+                    {currentQuestion?.answers.map((answer: string, index: number) => (
+                        <Checkbox value={index} key={index} className="test-form-multiple-answer">
+                            {String.fromCharCode(65 + index)}. {answer}
+                        </Checkbox>
+                        ))}
+                    </Checkbox.Group>
+                )}
+                {currentQuestion?.questionType === QuestionType.Essay && (
+                    <TextArea className="test-form-essay-answer"
+                        value={userAnswer[doingQuesId]}
+                        onChange={(e) => HandleEssayAnswer(e.target.value)}
+                        placeholder="Điền câu trả lời"
+                    />
+                )}
+            </div>
+            <div className="test-form__question-navigate">
+                <ArrowLeftOutlined className="btn-prev-question" onClick={() => {HandleNavigateQuestion('back');}}/>
+                <ArrowRightOutlined className="btn-next-question" onClick={() => {HandleNavigateQuestion('next');}}/>
             </div>
         </div>
     );
