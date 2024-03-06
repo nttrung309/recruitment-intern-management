@@ -1,4 +1,5 @@
 import React from "react";
+import TestForm from "./TestForm";
 
 const TestBody: React.FC = () => {
     //Call data from firebase 
@@ -24,6 +25,7 @@ const TestBody: React.FC = () => {
                 </div>
                 <button type="button" className="btn-submit-test">Nộp bài</button>
             </div>
+            <TestForm/>
         </div>
     );
 };

@@ -1,0 +1,21 @@
+.test-form {
+    &__question-num {
+      // CSS styles for question number
+    }
+  
+    &__question-content {
+      // CSS styles for question content
+    }
+  
+    &__question-require {
+      // CSS styles for question requirement
+    }
+  
+    &__answers {
+      // CSS styles for answers section
+  
+      .test-form__answer {
+        // CSS styles for individual answer container
+      }
+    }
+  }

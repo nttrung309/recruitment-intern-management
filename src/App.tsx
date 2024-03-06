@@ -24,8 +24,6 @@ const MainView = memo(({ statusLogin }: { statusLogin: boolean }) => {
     if (!statusLogin && !publicRoutes.includes(location.pathname)) {
         navigate('/login');
     }
-
-    console.log(PublicPage);
   }, [statusLogin, navigate]);
 
   return(
