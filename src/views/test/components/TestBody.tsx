@@ -1,10 +1,25 @@
 import React from "react";
 import TestForm from "./TestForm";
+import { collection, addDoc } from "firebase/firestore"; 
+import { db } from "src/firebase";
 
 const TestBody: React.FC = () => {
     //Call data from firebase 
     const totalQuestions: number = 20;
     const finishedQuestions: number = 2;
+
+    const TestAddDoc = async () => {
+        try {
+        const docRef = await addDoc(collection(db, "users"), {
+            first: "Ada",
+            last: "Lovelace",
+            born: 1815
+        });
+        console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+        console.error("Error adding document: ", e);
+        }
+    }
 
     return (
         <div className='test-page'>
@@ -23,7 +38,7 @@ const TestBody: React.FC = () => {
                     {/* Timer icon here */}
                     00:05:00
                 </div>
-                <button type="button" className="btn-submit-test">Nộp bài</button>
+                <button onClick={TestAddDoc} type="button" className="btn-submit-test">Nộp bài</button>
             </div>
             <TestForm/>
         </div>
