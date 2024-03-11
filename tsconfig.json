@@ -23,7 +23,6 @@
     "paths": {
       "@routers/*": ["src/routers/*"],
       "@views/*": ["src/views/*"]
-      // other aliases if needed
     }
   },
   "include": [

@@ -6,12 +6,14 @@ import { routerResetPassword } from "../views/auth/ResetPassword/router";
 //Private Routes
 import { routerHome } from "../views/home/router";
 import { routerTest } from "../views/test/router";
+import { routerProcess } from "../views/process/router";
 
-import { IRouter } from './interface';
+import { IRouter } from '@routers/interface';
 
 export const privatePage: IRouter[] = [
     routerHome,
-    routerTest
+    routerTest,
+    routerProcess
 ];
 
 export const publicPage: IRouter[] = [

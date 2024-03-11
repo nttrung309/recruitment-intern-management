@@ -18,8 +18,8 @@ const Home: React.FC = () => {
     const navigate = useNavigate();
     
     const headerItems = [
-        { icon: UserIcon, label: 'Thi trắc nghiệm' },
-        { icon: BookIcon, label: 'Tiến trình học tập' }
+        { icon: UserIcon, label: 'Thi trắc nghiệm', url: '/test'},
+        { icon: BookIcon, label: 'Tiến trình học tập', url: '/process' }
     ];
     
     return(

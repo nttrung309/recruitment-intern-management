@@ -1,53 +1,26 @@
 import React, { useEffect, useState } from "react";
 
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from 'src/modules';
+import { DoingQuesIdSelector, SelectedTestIdSelector, TestDataSelector } from "src/modules/test/testStore";
+import { QuestionType } from "src/modules/test/testStore";
+
 import type { RadioChangeEvent } from 'antd';
 import { Radio, Checkbox, Input } from 'antd';
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import type { GetProp } from 'antd';
+import { setDoingQuesId } from "src/modules/test/action";
 
 const { TextArea } = Input;
 
-const plainOptions = ['Apple', 'Pear', 'Orange'];
 
 const TestForm: React.FC = () => {
+    const dispatch = useDispatch();
+
     //Redux
-    const selectedTestId: string = "test01";
-
-    //Call data from Firebase
-    enum QuestionType {
-        SingleAnswer,
-        MultipleAnswer,
-        Essay
-    };
-
-    const testData = [
-        {
-            questionID: 1,
-            questionContent: "Sum = 24 + 56 + 72 + 82.",
-            questionRequire: "Trong trường hợp trên Sum là:",
-            questionType: QuestionType.SingleAnswer,
-            answers: ['Letter', 'Integer', 'Number', 'Character'],
-            correctAnswer: 2
-        },
-        {
-            questionID: 2,
-            questionContent: "Sum = 24 + 56 + 72 + 82.",
-            questionRequire: "Trong trường hợp trên Sum là:",
-            questionType: QuestionType.MultipleAnswer,
-            answers: ['Letter', 'Integer', 'Number', 'Character'],
-            correctAnswer: 2
-        },
-        {
-            questionID: 3,
-            questionContent: "Sum = 24 + 56 + 72 + 82.",
-            questionRequire: "Trong trường hợp trên Sum là:",
-            questionType: QuestionType.Essay,
-            answers: ['Letter', 'Integer', 'Number', 'Character'],
-            correctAnswer: 2
-        }
-    ];
-
-    const  [doingQuesId, setDoingQuesId] = useState<number>(1);
+    const selectedTestId = useSelector(SelectedTestIdSelector);
+    const testData = useSelector(TestDataSelector);
+    const  doingQuesId = useSelector(DoingQuesIdSelector);
     const [userAnswer, setUserAnswer] = useState<any[]>([]);
     const [currentQuestion, SetCurrentQuestion] = useState<any>();
 
@@ -77,25 +50,25 @@ const TestForm: React.FC = () => {
             newUserAnswer[currentQuestion.questionID - 1] = textAnswer;
             setUserAnswer(newUserAnswer);
         }
-    } 
+    }
 
     useEffect(() => {
-        const newQuestion = testData?.find(question => question.questionID === doingQuesId);
+        const newQuestion = testData?.find((question: any) => question.questionID === doingQuesId);
         SetCurrentQuestion(newQuestion);
     }, [doingQuesId])
 
     const HandleNavigateQuestion = (action: 'next' | 'back') => {
         if(action == 'next' && doingQuesId < testData.length){
-            setDoingQuesId(doingQuesId + 1);
+            dispatch(setDoingQuesId(doingQuesId + 1));
         }
         else if (doingQuesId != 0){
-            setDoingQuesId(doingQuesId - 1);
+            dispatch(setDoingQuesId(doingQuesId - 1));
         }
     }
 
-    useEffect(() => {
-        console.log(userAnswer);
-    }, [userAnswer]);
+    // useEffect(() => {
+    //     console.log(userAnswer);
+    // }, [userAnswer]);
 
     return (
         <div className="test-form">

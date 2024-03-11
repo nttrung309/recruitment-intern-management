@@ -1,5 +1,5 @@
 .test-page{
-    height: 85%;
+    height: 100%;
     width: 80%;
     padding-top: 40px;
     box-sizing: border-box;
@@ -81,4 +81,8 @@
             scale: 1.01;
         }
     }
+}
+
+.modal-submit-test{
+    pointer-events: all;
 }

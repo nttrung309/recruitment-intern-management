@@ -1,5 +1,5 @@
 .home{
-    height: 85%;
+    height: 100%;
     padding-top: 40px;
     box-sizing: border-box;
     
@@ -31,8 +31,11 @@
             width: 600px;
 
             &__option{
+                height: 48px;
                 font-family: 'Open Sans';
                 font-size: 16px;
+                display: flex;
+                align-items: center;
             }
 
             .ant-select-selection-item{

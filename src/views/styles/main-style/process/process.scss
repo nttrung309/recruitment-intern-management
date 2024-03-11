@@ -1,0 +1,147 @@
+.process {
+    height: 100%;
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 10%;
+
+    .process__container{
+        
+    }
+
+    &__title {
+        font-family: 'Roboto';
+        font-size: 32px;
+        font-weight: 700;
+        color: $-Gray-500;
+
+        margin-bottom: 24px;
+
+        &__username {
+            color: $-Orange-500;
+        }
+    }
+    
+    &__form-submit {
+        width: 524px;
+
+        &__item {
+            margin-bottom: 15px;
+
+            &__label {
+                font-family: 'Roboto';
+                font-size: 16px;
+                font-weight: 600;
+
+                margin-bottom: 12px;
+
+                color: #4D4D4D;
+            }
+            
+            &__select {
+                height: 48px;
+                width: 100%;
+
+                &__option {
+                    font-family: 'Roboto';
+                    font-size: 16px;
+
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .ant-select-selection-item{
+                    font-family: 'Roboto';
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #666666;
+                }
+            }
+            
+            &__input {
+                width: 100%;
+                height: 48px;
+
+                font-family: 'Roboto';
+                font-size: 16px;
+                font-weight: 400;
+
+                color: $-Gray-300;
+            }
+            
+            &__textbox {
+                width: 100%;
+                min-height: 96px;
+
+                font-family: 'Roboto';
+                font-size: 16px;
+                font-weight: 400;
+                
+                overflow-y: hidden;
+
+                margin-bottom: 32px;
+            }
+        }
+    }
+    
+    .btn-send-report {
+        width: 140px;
+        height: 48px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+        column-gap: 8px;
+
+        background-color: $-Orange-500;
+
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 700;
+
+        color: #FFFFFF;
+
+        cursor: pointer;
+
+        transition: all ease 0.5s;
+        -webkit-transition: all ease 0.5s;
+        -moz-transition: all ease 0.5s;
+        -ms-transition: all ease 0.5s;
+        -o-transition: all ease 0.5s;
+
+        &:hover{
+            background-color: $-Orange-400;
+        }
+        
+        .btn-send-report__icon{
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.ant-select-dropdown, .ant-select-item-option-selected:not(.ant-select-item-option-disabled){
+    color: $-Orange-500 !important;
+}
+
+.ant-select-item.ant-select-item-option.ant-select-item-option-selected{
+    .process__form-submit__item__select__option{
+        color: $-Orange-500 !important;
+    }
+}
+
+.ant-select-item.ant-select-item-option{
+    .process__form-submit__item__select__option{
+        color: #666666;
+    }
+}

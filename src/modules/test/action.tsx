@@ -1,9 +1,9 @@
-import React from 'react'
+import { createAction } from '@reduxjs/toolkit';
 
-type Props = {}
+export const setSelectedTestId = createAction<string>('testStore/setSelectedTestId');
 
-const action = (props: Props) => {
-  return (
-    <div>action</div>
-  )
-}
+export const setDoingQuesId = createAction<number>('testStore/setDoingQuesId');
+
+export const setUserAnswer = createAction<any[]>('testStore/setUserAnswer');
+
+export const setCurrentQuestion = createAction<any[]>('testStore/setCurrentQuestion');
