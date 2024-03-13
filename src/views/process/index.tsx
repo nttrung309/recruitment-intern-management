@@ -15,7 +15,7 @@ const ProcessPage: React.FC = () => {
     const navigate = useNavigate();
 
     const headerItems = [
-        { icon: UserIcon, label: 'Thi trắc nghiệm', url: '/test'},
+        { icon: UserIcon, label: 'Thi trắc nghiệm', url: '/'},
         { icon: BookIcon, label: 'Tiến trình học tập', url: '/process'}
     ];
 

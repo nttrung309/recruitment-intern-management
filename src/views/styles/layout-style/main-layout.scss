@@ -1,7 +1,8 @@
 .main-layout{
-    height: 100vh;
-
+    height: 100vh; /* Chiều cao tối thiểu bằng 100% chiều cao của viewport */
+    
     .body-container{
         height: 85%;
+        min-height: 600px;
     }
 }
