@@ -6,7 +6,7 @@ interface HeaderItem {
     icon: string;
     label: string;
     url: string;
-  }
+}
 
 interface MainLayoutProps {
     children: ReactNode;

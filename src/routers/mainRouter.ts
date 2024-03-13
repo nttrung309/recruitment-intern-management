@@ -2,6 +2,8 @@
 import { routerLogin } from "../views/auth/Login/router";
 import { routerForgotPassword } from "../views/auth/ForgotPassword/router";
 import { routerResetPassword } from "../views/auth/ResetPassword/router";
+import { routerUserRecruit } from "../views/recruit/UserRecruit/router";
+import { routerBusinessRecruit } from "../views/recruit/BusinessRecruit/router";
 
 //Private Routes
 import { routerHome } from "../views/home/router";
@@ -19,5 +21,7 @@ export const privatePage: IRouter[] = [
 export const publicPage: IRouter[] = [
     routerLogin,
     routerForgotPassword,
-    routerResetPassword
+    routerResetPassword,
+    routerUserRecruit,
+    routerBusinessRecruit
 ];

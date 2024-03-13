@@ -1,0 +1,115 @@
+.recruit-search-bar{
+    box-sizing: border-box;
+
+    width: 80%;
+    height: 60px;
+
+    margin-top: 60px;
+    
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__position-input{
+        height: 48px;
+
+        flex-grow: 1;
+        flex-basis: 0;
+
+        &.ant-input-affix-wrapper{
+            width: auto;
+
+            .lookup-recruit-icon div{
+                display: flex;
+                align-items: center;
+            }
+
+            font-family: 'Open Sans';
+            font-size: 16px;
+            font-weight: 400;
+
+            color: $-Gray-200;
+        }
+
+        .lookup-recruit-icon svg{
+            stroke: $-Orange-500;
+        }
+    }
+
+    &__major-select{
+        height: 48px;
+
+        flex-grow: 1;
+        flex-basis: 0;
+
+        &__option {
+            font-family: 'Open Sans';
+            font-size: 16px;
+            font-weight: 400;
+
+            color: $-Gray-500;
+        }
+
+        .ant-select-selection-item{
+            font-family: 'Open Sans';
+            font-size: 16px;
+        }
+    }
+
+    &__company-select{
+        height: 48px;
+
+        flex-grow: 1;
+        flex-basis: 0;
+
+        &__option{
+            font-family: 'Open Sans';
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+
+    .dropdown-icon{
+        color: $-Orange-500;
+    }
+
+    .btn-look-up-recruit{
+        width: 140px;
+        height: 48px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 4px;
+
+        color: #FFFFFF;
+        background-color: $-Orange-500;
+
+        font-family: 'Inter';
+        font-size: 16px;
+        font-weight: 700;
+
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+
+        .lookup-recruit-icon svg path{
+            stroke: #FFFFFF;
+        }
+    }
+}
+
+.ant-select-item.ant-select-item-option.ant-select-item-option-selected{
+    .recruit-search-bar__major-select__option{
+        color: $-Orange-500 !important;
+    }
+}
+
+.ant-select-item.ant-select-item-option{
+    .recruit-search-bar__major-select__option{
+        color: $-Gray-500;
+    }
+}
