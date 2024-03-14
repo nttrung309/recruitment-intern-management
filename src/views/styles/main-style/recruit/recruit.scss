@@ -1,11 +1,28 @@
 .recruit{
     height: 100%;
-    display: flex;
-    justify-content: center;
+    width: 80%;
 
-    .test{
-        width: 200px;
-        height: 200px;
-        background-color: pink;
+    margin: 0 auto;
+
+    &__title{
+        font-family: Roboto;
+        font-size: 32px;
+        font-weight: 700;
+        text-align: center;
+
+        color: $-Gray-500;
+
+        margin: 54px 0;
+
+        span{
+            color: $-Orange-500
+        }
+    }
+
+    &__recruit-cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); //Set 3 to 'auto-fit' for reponsive
+        grid-gap: 24px;
+        grid-row-gap: 24px;
     }
 }
