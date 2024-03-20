@@ -1,0 +1,184 @@
+.recruit-register {
+
+    padding-top: 10px;
+
+    .recruit-register-wrapper{
+      max-width: 1100px;
+      margin: 0 auto;
+
+      display: flex;
+      flex-direction: column;
+
+      row-gap: 12px;
+    }
+
+    &__title {
+      width: fit-content;
+
+      font-family: Roboto;
+      font-size: 32px;
+      font-weight: 700;
+
+      color: $-Orange-500;
+    }
+  
+    &__input-item {
+      max-width: 524px;
+      min-height: 72px;
+
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+
+      &__label {
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 600;
+
+        color: #4D4D4D;
+
+        span {
+          color: #FF4747;
+        }
+      }
+  
+      &__upload-wrapper {
+        display: flex;
+        align-items: center;
+        column-gap: 24px;
+        
+        padding-top: 12px;
+      }
+
+      &__upload{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &__btn{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          border-radius: 8px;
+          -webkit-border-radius: 8px;
+          -moz-border-radius: 8px;
+          -ms-border-radius: 8px;
+          -o-border-radius: 8px;
+
+          width: 138px;
+          height: 35px;
+
+          color: #FFFFFF;
+          background-color: $-Orange-400;
+
+          font-family: Roboto;
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 16px;
+          letter-spacing: 0em;
+          text-align: center;
+
+          transition: all ease 0.5s;
+          -webkit-transition: all ease 0.5s;
+          -moz-transition: all ease 0.5s;
+          -ms-transition: all ease 0.5s;
+          -o-transition: all ease 0.5s;
+
+          cursor: pointer;
+
+          &:hover{
+              background-color: $-Orange-300;
+          }
+        }   
+      }
+
+      &__input {
+        // CSS cho input
+      }
+  
+      &__date-time-input {
+        // CSS cho input ngày tháng
+      }
+  
+      &__select {
+        // CSS cho select
+      }
+    }
+  
+    &__form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-auto-flow: row;
+      column-gap: 20px;
+      row-gap: 12px;
+
+      max-width: 1100px;
+
+      &__left {
+        max-width: 524px;
+      }
+  
+      &__right {
+        max-width: 524px;
+      }
+    }
+
+    &__form-caption{
+      width: fit-content;
+      
+      font-family: 'Roboto';
+      font-size: 13px;
+      font-weight: 400;
+
+      color: $-Gray-400;
+
+      span{
+        color: #FF4747;
+      }
+    }
+  
+    &__btn-send {
+      width: 140px;
+      height: 48px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+      column-gap: 8px;
+
+      background-color: $-Orange-500;
+
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 700;
+
+      color: #FFFFFF;
+
+      cursor: pointer;
+
+      transition: all ease 0.5s;
+      -webkit-transition: all ease 0.5s;
+      -moz-transition: all ease 0.5s;
+      -ms-transition: all ease 0.5s;
+      -o-transition: all ease 0.5s;
+
+      &:hover{
+          background-color: $-Orange-400;
+      }
+      
+      .btn-send-report__icon{
+          display: flex;
+          align-items: center;
+      }
+  }
+  }
+  

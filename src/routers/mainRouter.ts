@@ -4,6 +4,9 @@ import { routerForgotPassword } from "../views/auth/ForgotPassword/router";
 import { routerResetPassword } from "../views/auth/ResetPassword/router";
 import { routerUserRecruit } from "../views/recruit/UserRecruit/router";
 import { routerBusinessRecruit } from "../views/recruit/BusinessRecruit/router";
+import { routerRecruitNotFound } from "../views/recruit/NotFound/router";
+import { routerUserRegister } from "../views/recruit/Register/UserRegister/router";
+import { routerBusinessRegister } from "../views/recruit/Register/BusinessRegister/router";
 
 //Private Routes
 import { routerHome } from "../views/home/router";
@@ -23,5 +26,8 @@ export const publicPage: IRouter[] = [
     routerForgotPassword,
     routerResetPassword,
     routerUserRecruit,
-    routerBusinessRecruit
+    routerBusinessRecruit,
+    routerRecruitNotFound,
+    routerUserRegister,
+    routerBusinessRegister
 ];

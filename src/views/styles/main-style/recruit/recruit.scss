@@ -5,6 +5,8 @@
     margin: 0 auto;
 
     &__title{
+        max-width: 530px;
+
         font-family: Roboto;
         font-size: 32px;
         font-weight: 700;
@@ -12,17 +14,31 @@
 
         color: $-Gray-500;
 
-        margin: 54px 0;
+        margin: 54px auto;
 
         span{
             color: $-Orange-500
         }
+        &__sub{
+            font-family: 'Roboto';
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+
+            margin-top: 12px;
+        }
     }
+    
 
     &__recruit-cards{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); //Set 3 to 'auto-fit' for reponsive
         grid-gap: 24px;
         grid-row-gap: 24px;
+    }
+
+    &__not-found-banner{
+        width: fit-content;
+        margin: 0 auto;
     }
 }
