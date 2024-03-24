@@ -1,6 +1,5 @@
 .recruit{
     height: 100%;
-    width: 80%;
 
     margin: 0 auto;
 
@@ -29,12 +28,24 @@
         }
     }
     
+    &__recruit-cards-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 
     &__recruit-cards{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); //Set 3 to 'auto-fit' for reponsive
         grid-gap: 24px;
         grid-row-gap: 24px;
+
+        width: 80%;
+
+        @media only screen and (max-width: 840px) {
+            width: fit-content;
+        }
     }
 
     &__not-found-banner{

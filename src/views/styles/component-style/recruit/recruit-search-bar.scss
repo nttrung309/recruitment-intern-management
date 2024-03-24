@@ -1,11 +1,10 @@
 .recruit-search-bar{
-    box-sizing: border-box;
 
-    width: 100%;
+    width: 80%;
     height: 60px;
 
-    margin-top: 60px;
-    
+    padding-top: 60px;
+    margin: 0 auto;
 
     display: flex;
     flex-direction: row;
@@ -68,6 +67,10 @@
             font-size: 16px;
             font-weight: 400;
         }
+        .ant-select-selection-item{
+            font-family: 'Open Sans';
+            font-size: 16px;
+        }
     }
 
     .dropdown-icon{
@@ -98,6 +101,56 @@
 
         .lookup-recruit-icon svg path{
             stroke: #FFFFFF;
+        }
+    }
+
+    .btn-filter-recruit{
+        width: 74px;
+        height: 44px;
+        display: none;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 4px;
+
+        color: #FFFFFF;
+        background-color: $-Orange-500;
+
+        font-family: 'Inter';
+        font-size: 16px;
+        font-weight: 700;
+
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+
+        cursor: pointer;
+
+        .filter-recruit-icon div{
+            display: flex;
+            align-items: center;
+        }
+    }
+
+
+    @media only screen and (max-width: 800px) {
+        &__major-select{
+            display: none;
+        }
+
+        &__company-select{
+            display: none;
+        }
+
+        .btn-look-up-recruit{
+            display: none;
+        }
+
+        .btn-filter-recruit{
+            display: flex;
         }
     }
 }

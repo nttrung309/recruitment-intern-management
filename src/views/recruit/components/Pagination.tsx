@@ -43,13 +43,27 @@ const Pagination: React.FC<PaginationProps> = ({ itemsPerPage, totalItems, curre
 	}, [startPageNumber, currentPage, totalPage]);
 
 	const ChangePageNumbers = (option: any) => {
+		let newPageNumber = currentPage;
 		if(option == 'next' && startPageNumber + maxPageNumbersShow - 1 !== totalPage){
 			//setStartPageNumber(startPageNumber + 1);
-            paginate(currentPage + 1);
+			newPageNumber = currentPage + 1
+            paginate(newPageNumber);
 		}
-		if(option == 'prev' && startPageNumber > 2){
+		if(option == 'prev' && currentPage > 1){
 			//setStartPageNumber(startPageNumber - 1);
-            paginate(currentPage - 1);
+			newPageNumber = currentPage - 1
+            paginate(newPageNumber);
+		}
+		if(newPageNumber > 2 && (newPageNumber <= totalPage - 4)){
+			setStartPageNumber(newPageNumber-1);
+		}
+		else{
+			if(newPageNumber < (totalPage/2)){
+				setStartPageNumber(2);
+			}
+			else{
+				setStartPageNumber(totalPage - 4);
+			}
 		}
 	}
   	return (

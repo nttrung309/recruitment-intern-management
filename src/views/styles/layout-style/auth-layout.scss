@@ -22,6 +22,15 @@
             width: 28%;
             align-self: center;
             min-width: 500px;
+
+            @media only screen and (max-width: 900px) {
+                text-align: center;
+            }
+        }
+        @media only screen and (max-width: 900px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
     }
     &__content{
@@ -42,6 +51,16 @@
         .banner-container{
             display: flex;
             align-items: center;
+
+            @media only screen and (max-width: 1200px) {
+                img{
+                    width: 40vw;
+                }
+            }
+            
+            @media only screen and (max-width: 900px) {
+                display: none;
+            }
         }
         
     }
