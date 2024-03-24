@@ -50,7 +50,7 @@
         }
     }
     
-    .btn-submit-test {
+    .btn-submit-test, .ant-btn {
         width: 108px;
         height: 48px;
 
@@ -58,7 +58,7 @@
         font-size: 16px;
         font-weight: 700;
 
-        color: white;
+        color: #FFFFFF;
 
         border: none;
         border-radius: 6px;
@@ -79,6 +79,11 @@
         &:hover{
             background-color: $-Orange-400;
             scale: 1.01;
+        }
+    }
+    .ant-btn{
+        span{
+            color: #FFFFFF;
         }
     }
 }

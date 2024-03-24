@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Dropdown, Input, Select, Checkbox } from "antd";
+import { Dropdown, Input, Select, Checkbox, Button } from "antd";
 import { CaretDownOutlined } from "@ant-design/icons";
 
 import LookUpIcon from '../../../shared/assets/icon/look-up-icon.svg';
@@ -61,6 +61,21 @@ const RecruitSearchBar: React.FC = () => {
                 setSelectedMajors(selectedMajors.filter((item: any) => item !== major));
             }
         }
+
+        const HandleSelectAll = () => {
+            if (selectedMajors.length < majors.length){
+                const newSelectedMajors = [...selectedMajors]
+                majors.map(major => {
+                    if(!selectedMajors.includes(major)){
+                        newSelectedMajors.push(major);
+                    }
+                })
+                setSelectedMajors(newSelectedMajors);
+            }
+            else{
+                setSelectedMajors([]);
+            }
+        }
     
         return(
             <div className="filter-dropdown">
@@ -79,7 +94,12 @@ const RecruitSearchBar: React.FC = () => {
                 <div className="major-select">
                     <div className="major-select__header">
                         <p className="major-select__header__title">Chọn lĩnh vực chuyên môn</p>
-                        <div className="major-select__header__select-all">Chọn tất cả</div>
+                        <div 
+                            className="major-select__header__select-all"
+                            onClick={HandleSelectAll}
+                        >
+                            Chọn tất cả
+                        </div>
                     </div>
                     <div className="major-select__item-container">
                         {majors.map(major => {
@@ -94,7 +114,10 @@ const RecruitSearchBar: React.FC = () => {
                                     >
                                         {major}
                                     </p>
-                                    <Checkbox checked={selectedMajors.includes(major)}/>
+                                    <Checkbox 
+                                        checked={selectedMajors.includes(major)}
+                                        onClick={() => {HandleSelectMajor(major)}}
+                                    />
                                 </div>
                             );
                         })}
@@ -139,10 +162,12 @@ const RecruitSearchBar: React.FC = () => {
                     </Option>
                 ))}
             </Select>
-            <div className='btn-look-up-recruit'>
-                <ReactSVG className='lookup-recruit-icon' src={LookUpIcon}/>
-                <p>Tìm việc</p>
-            </div>
+            <Button
+                type='primary'
+                icon={<ReactSVG className='lookup-recruit-icon' src={LookUpIcon}/>}
+            >
+                Tìm việc
+            </Button>
             <Dropdown
                 dropdownRender={FilterDropdown}
                 trigger={['click']}

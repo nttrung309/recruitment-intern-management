@@ -14,7 +14,7 @@ import SendIcon from '../../../../shared/assets/icon/send-report-icon.svg'
 import { routerUserRegister as router } from './router';
 
 import { ReactSVG } from 'react-svg';
-import { Input, Modal, Select } from 'antd';
+import { DatePicker, Input, Modal, Select } from 'antd';
 import { CaretDownOutlined } from '@ant-design/icons';
 
 import SubmitRegisterForm from '../components/SubmitRegisterForm';
@@ -68,7 +68,10 @@ const UserRegister: React.FC = () => {
                                 <div className="recruit-register__input-item__label">
                                     Ngày sinh: <span>*</span>
                                 </div>
-                                <Input variant="filled" className='recruit-register__input-item__date-time-input' placeholder='10/10/2021' prefix={<ReactSVG src={CalendarIcon}/>} allowClear/>
+                                <DatePicker
+                                    placeholder='10/10/2021'
+                                    suffixIcon={<ReactSVG src={CalendarIcon}/>}
+                                />
                             </div>
                             <div className="recruit-register__input-item">
                                 <div className="recruit-register__input-item__label">

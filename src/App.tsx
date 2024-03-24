@@ -14,6 +14,7 @@ import { RootState } from './modules';
 import { StatusLoginSelector } from './modules/authentication/profileStore';
 
 import './views/styles/styles.scss';
+import CustomProvider from './shared/components/CustomProvider';
 
 const MainView = memo(({ statusLogin }: { statusLogin: boolean }) => {
   const navigate = useNavigate();
@@ -36,9 +37,12 @@ const MainView = memo(({ statusLogin }: { statusLogin: boolean }) => {
 function App() {
   const statusLogin: boolean = useSelector(StatusLoginSelector);
   return (
-    <Router>
-      <MainView statusLogin={statusLogin} />
-    </Router>
+    <CustomProvider>
+      <Router>
+        <MainView statusLogin={statusLogin} />
+      </Router>
+    </CustomProvider>
+    
   );
 }
 

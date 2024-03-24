@@ -77,7 +77,7 @@
         color: $-Orange-500;
     }
 
-    .btn-look-up-recruit{
+    .btn-look-up-recruit, .ant-btn{
         width: 140px;
         height: 48px;
 
@@ -109,7 +109,6 @@
         height: 44px;
         display: none;
 
-        display: flex;
         align-items: center;
         justify-content: center;
         column-gap: 4px;
@@ -136,7 +135,7 @@
     }
 
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 900px) {
         &__major-select{
             display: none;
         }
@@ -145,7 +144,7 @@
             display: none;
         }
 
-        .btn-look-up-recruit{
+        .btn-look-up-recruit, .ant-btn{
             display: none;
         }
 

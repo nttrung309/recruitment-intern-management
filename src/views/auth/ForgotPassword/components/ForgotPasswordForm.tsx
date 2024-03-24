@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from 'react';
-import { Select, Space, Input } from 'antd';
+import { Select, Space, Input, Button } from 'antd';
 import { CaretDownOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import customDropdownIcon from '../../../../shared/assets/images/showdropdown_icon.svg';
 import { Link, useNavigate } from 'react-router-dom';
@@ -38,8 +38,7 @@ const ForgotPasswordForm = () => {
                     <Link className='' to="/login">
                         <div className='back-login-label'>Quay lại đăng nhập</div>
                     </Link>
-                    
-                    <input className='forgot-password-submit button' type="submit" value="Xác nhận" />
+                    <Button onClick={HandleSubmit} type="primary">Xác nhận</Button>
                 </form>
             </div>
         </div>

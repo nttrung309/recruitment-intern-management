@@ -22,7 +22,7 @@ const RecruitCard: React.FC<{props: RecruitCardProps}> = ({props}) => {
         <div className="recruit-card">
             <div className="recruit-card__header">
                 <div className="recruit-card__header__left">
-                    <ReactSVG src={icon} className="recruit-card__header__left__icon"/>
+                    <img src={icon} className="recruit-card__header__left__icon"/>
                     <div className="recruit-card__header__left__info">
                         <div className="recruit-card__header__left__info__position">{position}</div>
                         <div className="recruit-card__header__left__info__company-name">{company}</div>

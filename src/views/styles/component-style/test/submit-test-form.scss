@@ -40,7 +40,7 @@
         align-items: center;
         justify-content: center;
 
-        .btn{
+        .btn, .ant-btn{
             width: 115px;
             height: 44px;
             border-radius: 8px;
@@ -48,7 +48,6 @@
             -moz-border-radius: 8px;
             -ms-border-radius: 8px;
             -o-border-radius: 8px;
-            border: none;
             font-family: 'Roboto';
             font-size: 16px;
             font-weight: 500;
@@ -59,7 +58,7 @@
             -ms-transition: all ease 0.5s;
             -o-transition: all ease 0.5s;
 
-            &.close-submit-form{
+            &.close-submit-form, {
                 background-color: #FFFFFF;
                 color: $-Gray-500;
 

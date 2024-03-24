@@ -6,7 +6,7 @@ import { UsernameSelector } from 'src/modules/authentication/profileStore';
 import { SelectedTestIdSelector, TestsSelector } from 'src/modules/test/testStore';
 import { setSelectedTestId } from 'src/modules/test/action';
 
-import { Select, Avatar } from 'antd';
+import { Select, Avatar, Input, Button } from 'antd';
 import { CaretDownOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 
@@ -47,7 +47,12 @@ const HomeBody = () => {
                         </Option>
                     ))}
                 </Select>
-                <input className='btn-home-create-test' type="button" value="+ Tạo đề thi" onClick={() => {if(selectedTestId !== ''){navigate('/test')}}}/>
+                <Button
+                    type='primary'
+                    onClick={() => {if(selectedTestId !== ''){navigate('/test')}}}
+                >
+                    + Tạo đề thi
+                </Button>
             </div>
         </div>
     );

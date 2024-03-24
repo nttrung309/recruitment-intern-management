@@ -47,8 +47,9 @@
                 .remember-password{
                     display: flex;
                     align-items: center;
+                    column-gap: 4px;
     
-                    .remember-pass-checkbox{
+                    .remember-pass-checkbox, .ant-checkbox-inner{
                         width: 20px;
                         height: 20px;
                         border: 1px solid #F26D21;
@@ -61,6 +62,8 @@
                     }
                     .remember-password-label{
                         @include remember-password-label;
+                        cursor: pointer;
+                        user-select: none;
                     }
                 }
                 .back-login-btn{
@@ -80,7 +83,7 @@
                 }
                 
             }
-            .button.login{
+            .button.login, .ant-btn{
                 @include button-login-style;
                 color: #FFFFFF;
 
@@ -98,7 +101,7 @@
                 background-color: $-Orange-500;
 
                 margin-top: 10px;
-            }
+            } 
         }
     }
 }

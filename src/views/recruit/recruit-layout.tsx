@@ -25,6 +25,7 @@ import { ReactSVG } from 'react-svg';
 import app from 'src/firebase';
 import { db } from 'src/firebase';
 import { addDoc, collection } from 'firebase/firestore';
+import { Button } from 'antd';
 
 
 interface HeaderItem {
@@ -66,6 +67,49 @@ const RecruitLayout: React.FC<RecruitLayoutProps> = ({headerItems, notFound}) =>
         // Gọi hàm addRecruitAndFetchData để fetch dữ liệu từ Firestore
         dispatch(FetchRecruitData());
     }, [dispatch]);
+
+    const recruitCardProps = [
+        {
+            company: 'Unigons',
+            email: 'tuyendung@alta.com.vn',
+            icon: 'https://firebasestorage.googleapis.com/v0/b/recruitment-intern-management.appspot.com/o/unigons-logo.svg?alt=media&token=248c7b75-813e-45ae-be81-61062a1c3339',
+            phone: '0282 240 9960',
+            position: 'Thiết kế UI/UX (Figma)',
+            require: 'Có tối thiểu 1 năm kinh nghiệm ReactJS, Typecript'
+        },
+        {
+            company: 'Alta Software',
+            email: 'tuyendung@alta.com.vn',
+            icon: 'https://firebasestorage.googleapis.com/v0/b/recruitment-intern-management.appspot.com/o/alta-software-logo.svg?alt=media&token=b3526a88-7aa0-491a-a0e9-170011f3fe30',
+            phone: '0282 240 9960',
+            position: 'Thiết kế UI/UX (Figma)',
+            require: 'Có tối thiểu 1 năm kinh nghiệm ReactJS, Typecript'
+        },
+        {
+            company: 'Alta Group',
+            email: 'tuyendung@alta.com.vn',
+            icon: 'https://firebasestorage.googleapis.com/v0/b/recruitment-intern-management.appspot.com/o/alta-group-logo.svg?alt=media&token=993c538d-fe6d-4a03-98f2-982e9e490c46',
+            phone: '0282 240 9960',
+            position: 'Thiết kế UI/UX (Figma)',
+            require: 'Có tối thiểu 1 năm kinh nghiệm ReactJS, Typecript'
+        },
+        {
+            company: 'Alta Plastic',
+            email: 'tuyendung@alta.com.vn',
+            icon: 'https://firebasestorage.googleapis.com/v0/b/recruitment-intern-management.appspot.com/o/alta-plastic-logo.svg?alt=media&token=99c5ad79-beda-4154-9e47-00a32e9c3f4c',
+            phone: '0282 240 9960',
+            position: 'Thiết kế UI/UX (Figma)',
+            require: 'Có tối thiểu 1 năm kinh nghiệm ReactJS, Typecript'
+        },
+        {
+            company: 'Alta Media',
+            email: 'tuyendung@alta.com.vn',
+            icon: 'https://firebasestorage.googleapis.com/v0/b/recruitment-intern-management.appspot.com/o/alta-media-logo.svg?alt=media&token=354c8b7b-24e7-4be3-adac-c524f6c0187c',
+            phone: '0282 240 9960',
+            position: 'Thiết kế UI/UX (Figma)',
+            require: 'Có tối thiểu 1 năm kinh nghiệm ReactJS, Typecript'
+        }
+    ];
 
     // const UploadData = () => {
     //     const randomRecruits = [];

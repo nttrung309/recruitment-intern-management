@@ -1,5 +1,5 @@
 import React, { ReactNode, useEffect, useState } from 'react';
-import { Select, Space, Input } from 'antd';
+import { Select, Space, Input, Button, Checkbox } from 'antd';
 import { CaretDownOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -24,8 +24,7 @@ const LoginForm = () => {
 
     const statusLogin: boolean = useSelector(StatusLoginSelector);
 
-    const HandleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+    const HandleLogin = () => {
         dispatch(setStatusLogin(true));
         navigate('/');
     };
@@ -34,7 +33,7 @@ const LoginForm = () => {
         <div className="login-form-container">
             <div className='login-form'>
                 <div className='login-form__header'>Đăng nhập</div>
-                <form className='login-form__form' onSubmit={(event) => {HandleSubmit(event);}}>
+                <form className='login-form__form' onSubmit={HandleLogin}>
                     <div className='input-field'>
                         <p className="label">Vai trò <span style={{color: "#FF4747"}}>*</span></p>
                         <Select
@@ -51,11 +50,11 @@ const LoginForm = () => {
                     </div>
                     <div className='input-field'>
                         <p className="label">Email <span style={{color: "#FF4747"}}>*</span></p> 
-                        <Input placeholder="Tên đăng nhập"/>
+                        <Input placeholder="Tên đăng nhập" required/>
                     </div>
                     <div className='input-field'>
                         <p className="label">Mật khẩu <span style={{color: "#FF4747"}}>*</span></p>
-                        <Input.Password placeholder="Nhập mật khẩu" />
+                        <Input.Password placeholder="Nhập mật khẩu" required/>
                     </div>
                     {!isValidInput && (
                         <div className='infor-label'>
@@ -66,7 +65,7 @@ const LoginForm = () => {
                     
                     <div className='remember-forgot-password'>
                         <div className="remember-password">
-                            <input type="checkbox" id="remember-pass-checkbox" className="remember-pass-checkbox"/>
+                            <Checkbox/>
                             <p className='remember-password-label'>Ghi nhớ mật khẩu</p>
                         </div>
                         <Link className='back-login-btn' to="/forgot-password">
@@ -76,12 +75,10 @@ const LoginForm = () => {
                     <ReCAPTCHA
                         sitekey="6LetL4UpAAAAAGDyUAD6ATbjbVqK4BkmcTL4t9B5"
                     />
-                    <input className='login button' type="submit" value="Đăng nhập" />
+                    <Button onClick={HandleLogin} type="primary">Đăng nhập</Button>
                 </form>
             </div>
         </div>
-        
-        
     );
 }
 

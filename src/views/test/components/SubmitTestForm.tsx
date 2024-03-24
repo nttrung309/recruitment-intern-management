@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import React from "react";
 
 interface SubmitTestFormProps {
@@ -15,8 +16,8 @@ const SubmitTestForm: React.FC<SubmitTestFormProps> = ({HandleCloseForm, HandleS
                 Bạn có chắc muốn nộp bài thi hay không?
             </div>
             <div className="submit-test-form__btn-group">
-                <input className="btn close-submit-form" type="button" value="Đóng" onClick={HandleCloseForm}/>
-                <input className="btn accept-submit-form" type="button" value="Xác nhận" onClick={HandleSubmitTest}/>
+                <Button onClick={HandleCloseForm}>Đóng</Button>
+                <Button type='primary' onClick={HandleSubmitTest}>Xác nhận</Button>
             </div>
         </div>
     );

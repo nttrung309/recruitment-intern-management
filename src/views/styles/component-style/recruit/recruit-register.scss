@@ -1,6 +1,9 @@
 .recruit-register {
-
     padding-top: 10px;
+
+    @media only screen and (max-width: 1100px) {
+      padding: 20px 10px;
+    }
 
     .recruit-register-wrapper{
       max-width: 1100px;
@@ -180,5 +183,13 @@
           align-items: center;
       }
   }
+  .ant-picker{
+    padding-left: 4px;
   }
+
+  .ant-picker-input{
+    flex-direction: row-reverse;
+    column-gap: 10px;
+  }
+}
   

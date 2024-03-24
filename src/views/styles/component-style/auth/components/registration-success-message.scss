@@ -1,0 +1,59 @@
+.ant-modal{
+    width: 470px;
+    height: 270px;
+
+    background-color: #FFFFFF;
+
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+
+    .regis-success-msg{
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 24px;
+
+        &__header{
+            width: 280px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            row-gap: 8px;
+        }
+
+        &__title{
+            font-family: 'Roboto';
+            font-size: 24px;
+            font-weight: 700;
+
+            text-align: center;
+            
+            color: $-Orange-500;
+        }
+        &__content{
+            font-family: 'Roboto';
+            font-size: 16px;
+            font-weight: 400;
+
+            text-align: center;
+            
+            color: $-Gray-500;
+        }
+        .ant-btn{
+            width: 200px;
+            height: 48px;
+
+            font-family: 'Inter';
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}

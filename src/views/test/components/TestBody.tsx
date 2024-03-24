@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore"; 
 import { db } from "src/firebase";
 
-import { Modal } from "antd";
+import { Button, Modal } from "antd";
 
 const TestBody: React.FC = () => {
     const navigate = useNavigate();
@@ -33,19 +33,6 @@ const TestBody: React.FC = () => {
         navigate('/process')
     }
 
-    // const TestAddDoc = async () => {
-    //     try {
-    //     const docRef = await addDoc(collection(db, "users"), {
-    //         first: "Ada",
-    //         last: "Lovelace",
-    //         born: 1815
-    //     });
-    //     console.log("Document written with ID: ", docRef.id);
-    //     } catch (e) {
-    //     console.error("Error adding document: ", e);
-    //     }
-    // }
-
     return (
         <div className='test-page'>
             <div className='test-page__title'>
@@ -63,7 +50,12 @@ const TestBody: React.FC = () => {
                     {/* Timer icon here */}
                     00:05:00
                 </div>
-                <button onClick={OpenSubmitForm} type="button" className="btn-submit-test">Nộp bài</button>
+                <Button 
+                    onClick={OpenSubmitForm}
+                    type='primary'
+                >
+                    Nộp bài
+                </Button>
             </div>
             <Modal className="modal-submit-test"
                 open={isSubmitFormOpen}

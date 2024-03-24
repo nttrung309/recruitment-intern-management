@@ -106,18 +106,19 @@
 }
 
 .header__dropdown-menu-items{
-    display: none;
     height: 0;
+
+    display: flex;
     flex-direction: column;
     row-gap: 20px;
     align-items: end;
     padding-right: 20px;
 
-    transition: all ease 0.5s;
-    -webkit-transition: all ease 0.5s;
-    -moz-transition: all ease 0.5s;
-    -ms-transition: all ease 0.5s;
-    -o-transition: all ease 0.5s;
+    transition: all ease 0.2s;
+    -webkit-transition: all ease 0.2s;
+    -moz-transition: all ease 0.2s;
+    -ms-transition: all ease 0.2s;
+    -o-transition: all ease 0.2s;
 
     .header-item{
         display: flex;
@@ -134,6 +135,12 @@
 
         cursor: pointer;
 
+        transition: all ease 0.2s;
+        -webkit-transition: all ease 0.2s;
+        -moz-transition: all ease 0.2s;
+        -ms-transition: all ease 0.2s;
+        -o-transition: all ease 0.2s;
+
         &__icon{
             stroke: $-Gray-400;
         }
@@ -148,12 +155,50 @@
     }
     &.show{
         display: flex;
-        height: auto;
-        @media only screen and (min-width: 900px) {
-            display: none;
+        height: 140px;
+        
+        @media only screen and (max-width: 900px) {
+            .header-item{
+                cursor: pointer;
+                opacity: 1;
+                pointer-events: all;
+            }
+            .header-user-menu{
+                cursor: pointer;
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+    @media only screen and (min-width: 900px) {
+        display: none;
+        .header-item{
+            cursor: auto;
+            user-select: none;
+            opacity: 0;
+        }
+
+        .header-user-menu{
+            cursor: auto;
+            user-select: none;
+            opacity: 0;
         }
     }
     @media only screen and (max-width: 900px) {
-        display: none;
+        display: flex;
+
+        .header-item{
+            cursor: auto;
+            user-select: none;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .header-user-menu{
+            cursor: auto;
+            user-select: none;
+            opacity: 0;
+            pointer-events: none;
+        }
     }
 }
